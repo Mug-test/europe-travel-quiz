@@ -7122,25 +7122,6 @@
     </style>
   </head>
   <body>
-<div id="pw-gate" style="position:fixed;inset:0;z-index:99999;background:#f6efe2;display:flex;align-items:center;justify-content:center;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;color:#3a2f26">
-<form id="pw-form" style="width:100%;max-width:340px;text-align:center">
-<div style="font-size:22px;font-weight:700;margin-bottom:8px">最适合你的欧洲游城市</div>
-<div style="font-size:14px;opacity:.75;margin-bottom:22px">输入测试密码开始测试<br>密码在小红书订单的发货信息里</div>
-<input id="pw-in" inputmode="numeric" autocomplete="off" placeholder="测试密码" style="width:100%;box-sizing:border-box;padding:13px 14px;font-size:18px;text-align:center;border:1.5px solid #c9b79c;border-radius:12px;background:#fffaf0;outline:none">
-<button type="submit" style="width:100%;margin-top:12px;padding:13px;font-size:16px;font-weight:600;border:0;border-radius:12px;background:#3a2f26;color:#f6efe2">开始测试</button>
-<div id="pw-err" style="min-height:20px;margin-top:10px;font-size:13px;color:#b3412e"></div>
-</form></div>
-<script>
-(function(){var K='mug-eu-pass',C='7837',g=document.getElementById('pw-gate');
-function open(){g.style.display='none';document.documentElement.style.overflow='';}
-try{if(localStorage.getItem(K)===C){open();return;}}catch(e){}
-document.documentElement.style.overflow='hidden';
-document.getElementById('pw-form').addEventListener('submit',function(e){e.preventDefault();
-var v=document.getElementById('pw-in').value.trim();
-if(v===C){try{localStorage.setItem(K,C);}catch(e){}open();}
-else{document.getElementById('pw-err').textContent='密码不对，请到订单的发货信息里复制';}});
-})();
-</script>
     <header>
       <button class="brand" id="homeBtn" aria-label="马克杯刻度，回到首页">
         <span class="logo-slot"></span><span>马克杯 · 刻度</span
