@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f6efe2" />
-    <title>最适合你的欧洲游城市 · 马克杯刻度</title>
+    <title>你的本命旅游城市（欧洲版） · 马克杯刻度</title>
     <meta
       name="description"
       content="从26个日常场景，找到一座明确首选、三座同频城市，也看见十种旅行倾向与更多欧洲去处。"
@@ -7119,7 +7119,8 @@
           /* 排版：避免末行只剩一个字；短标题均衡换行 */
       body, #result-content { text-wrap: pretty; }
       h1, h2, h3, h4, .chapter-tag, .cup-cap, .reason-head * { text-wrap: balance; }
-    </style>
+    #intro-title .intro-edition{display:block;font-size:.36em;letter-spacing:.08em;margin-top:.35em;opacity:.75;font-weight:600}
+</style>
   </head>
   <body>
     <header>
@@ -7139,8 +7140,8 @@
         </div>
         <div class="chapter-tag cover-tag"><b>EU</b><span>欧洲旅行篇</span></div>
         <div class="cover-edition">马克杯 · 刻度 <span>原创自测</span></div>
-        <h1 id="intro-title">最适合你的<span>欧洲游城市</span></h1>
-        <p class="cover-promise">看看哪座欧洲城市更让你放松。</p>
+        <h1 id="intro-title">你的本命<span>旅游城市</span><small class="intro-edition">（欧洲版）</small></h1>
+        <p class="cover-promise">你的思维方式适合怎样旅行</p>
         <form class="access-card" id="accessForm" novalidate>
           <div class="access-copy">
             <strong>输入兑换码，开始测试</strong><span>四位数字 · 本页不记录身份</span>
@@ -11022,7 +11023,7 @@
         result.cityAwards = buildCityAwards();
         $("result-content").innerHTML = `
  <nav class="result-jump" aria-label="结果章节"><a href="#score-summary">答案</a><a href="#reasons">主倾向</a><a href="#secondary-tendency">次倾向</a><a href="#city-coordinates">现场适配</a><a href="#memory-section">赠</a></nav>
- <section class="cities-intro"><span class="result-prelude">欧洲旅行测试 · 结果</span><div class="chapter-brand">马克杯 · 刻度 <span>原创自测</span></div><h1 id="cities-title" tabindex="-1">${cities.length ? '<span class="title-line">下一个旅行目的地：</span><span class="title-line">最适合你的欧洲游城市</span>' : "下一站，等偏爱浮现"}</h1>${cities.length ? '<p class="result-deck">先看最值得出发的一座，再比较三座各有理由的城市。</p>' : '<p class="result-deck">再补几道题，目的地会更清楚。</p>'}</section>
+ <section class="cities-intro"><span class="result-prelude">欧洲旅行测试 · 结果</span><div class="chapter-brand">马克杯 · 刻度 <span>原创自测</span></div><h1 id="cities-title" tabindex="-1">${cities.length ? '<span class="title-line">你的本命旅游城市</span><span class="title-line">（欧洲版）</span>' : "下一站，等偏爱浮现"}</h1>${cities.length ? '<p class="result-deck">你的思维方式适合怎样旅行：先看本命城市，再比较三座各有理由的备选。</p>' : '<p class="result-deck">再补几道题，目的地会更清楚。</p>'}</section>
  ${cities.length ? pairResultsHTML() : ""}
  ${cities.length ? fullProfileHTML() : ""}
  ${travelRoleSummaryHTML()}
@@ -11139,7 +11140,7 @@
         const { t, six } = shareInfo();
         $("shareImage").style.display = "none";
         $("shareCard").innerHTML =
-          `<div class="sc-brand"><span>${mug("travel", "mini")}马克杯 · 刻度</span><span>原创自测</span></div><div class="sc-kicker">下一个旅行目的地<br>最适合你的欧洲游城市</div><div class="share-five">${six.length ? six.map((c, i) => `<div><small>${pairShareLabel(c, i)}</small><b>${esc(chineseCityName(c))}</b><span>${matchScore(c)} 分 · ${esc(c.country)}</span></div>`).join("") : "旅行线索还在收集中"}</div>${roleArtKey() ? `<img class="sc-mug sc-role-art" src="${DATA.role_art[roleArtKey()]}" alt="">` : mug("travel", "sc-mug")}<div class="sc-name">${esc(t.name)}</div><div class="sc-en">${t.en}</div><div class="sc-tagline">${t.tag}</div><div class="sc-copyright">© 马克杯刻度 · ${QUESTIONS.length}个日常场景</div>`;
+          `<div class="sc-brand"><span>${mug("travel", "mini")}马克杯 · 刻度</span><span>原创自测</span></div><div class="sc-kicker">你的思维方式适合怎样旅行<br>你的本命旅游城市（欧洲版）</div><div class="share-five">${six.length ? six.map((c, i) => `<div><small>${pairShareLabel(c, i)}</small><b>${esc(chineseCityName(c))}</b><span>${matchScore(c)} 分 · ${esc(c.country)}</span></div>`).join("") : "旅行线索还在收集中"}</div>${roleArtKey() ? `<img class="sc-mug sc-role-art" src="${DATA.role_art[roleArtKey()]}" alt="">` : mug("travel", "sc-mug")}<div class="sc-name">${esc(t.name)}</div><div class="sc-en">${t.en}</div><div class="sc-tagline">${t.tag}</div><div class="sc-copyright">© 马克杯刻度 · ${QUESTIONS.length}个日常场景</div>`;
         showScreen("share");
       }
 
@@ -11151,7 +11152,7 @@
       async function copyShare() {
         const { t, six } = shareInfo();
         const text =
-          "下一个旅行目的地\n最适合你的欧洲游城市\n" +
+          "你的本命旅游城市（欧洲版）\n你的思维方式适合怎样旅行\n" +
           six
             .map((c, i) => pairShareLabel(c, i) + "｜" + cityTitle(c) + " · " + matchScore(c) + "分")
             .join("\n") +
@@ -11199,10 +11200,10 @@
           c.fillText("马克杯 · 刻度", 450, 80);
           c.font = "25px sans-serif";
           c.fillStyle = "#87765f";
-          c.fillText("下一个旅行目的地", 450, 145);
+          c.fillText("你的思维方式适合怎样旅行", 450, 145);
           c.font = "bold 30px sans-serif";
           c.fillStyle = "#5b3a22";
-          c.fillText("最适合你的欧洲游城市", 450, 190);
+          c.fillText("你的本命旅游城市（欧洲版）", 450, 190);
           let y = 270;
           for (let i = 0; i < six.length; i++) {
             c.textAlign = "left";
